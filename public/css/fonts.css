@@ -1,0 +1,20 @@
+@font-face {
+	font-family: "Headliner No. 45(ENG + RUS)";
+	src: url("../fonts/Headliner No. 45(ENG + RUS)/Headliner No. 45(ENG + RUS).otf") format("opentype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "OfficinaSerifBookC";
+	src: url("../fonts/OfficinaSerif-BookCTT/OfficinaSerifBookC.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "TrixieCyr-Plain";
+	src: url("../fonts/TrixieCyr-Plain/TrixieCyr-Plain.otf") format("opentype");
+	font-style: normal;
+	font-weight: normal;
+}

@@ -1,0 +1,109 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: black;
+}
+p, span, h1, h2, h3, h4, h5, h6, label, li{
+	color: white;
+	cursor: default;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight: 100;
+}
+.second-section, .third-section, .fourth-section{
+	font-family: "TrixieCyr-Plain";
+}
+a{
+	text-decoration: none;
+	color: #D1D1D1;
+	cursor: pointer;
+}
+ul{
+	list-style-type: none;
+}
+img{
+	width: 100%;
+}
+.font-family-HeadlinerNo45{
+	font-family: "Headliner No. 45(ENG + RUS)";
+}
+.font-family-OfficinaSerifBookC{
+	font-family: "OfficinaSerifBookC";
+}
+.font-family-TrixieCyrPlain{
+	font-family: "TrixieCyr-Plain";
+}
+
+.character-name{
+	font-family: "Headliner No. 45(ENG + RUS)";
+	font-size: 60px;
+	color: #ffb400;
+}
+.text-slider-paragraph-title{
+	font-family: "Headliner No. 45(ENG + RUS)";
+	font-size: 40px;
+	color: #ffb400;
+	margin-bottom: 15px;
+}
+.text-slider-paragraph{
+	font-family: "OfficinaSerifBookC";
+	font-size: 20px;
+	line-height: 1.7;
+	color: #E0E0E0FF;
+	margin-bottom: 30px;
+}
+
+
+.flex-start{
+	display: flex;
+	flex-flow: wrap row;
+}
+.flex-center{
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: center;
+}
+.flex-center-center{
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: center;
+	align-items: center;
+}
+.flex-space-between{
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: space-between;
+}
+.flex-column-start{
+	display: flex;
+	flex-flow: wrap column;
+}
+.flex-column-center{
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+}
+.flex-column-center-center{
+	display: flex;
+	flex-flow: wrap column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* скролл(прокрутка страницы) */
+::-webkit-scrollbar-track{
+background-color:#444444FF;
+box-shadow:0px 0px 3px #000 inset;
+}
+
+::-webkit-scrollbar-thumb{
+background-color:#FFB000;
+border-radius: 5px;
+}
+
+::-webkit-scrollbar{
+width: 5px;
+}

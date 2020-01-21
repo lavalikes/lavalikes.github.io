@@ -1,0 +1,211 @@
+/* css стили применяющиеся для элементов присутствующий на всех страницах*/
+.main-header li>a{
+	margin: 0 15px;
+}
+	.main-header a:hover{
+		color: #FFC400;
+	}
+.main-header .hidden-menu{
+	position: relative;
+	height: inherit;
+}
+	.main-header .hidden-menu p{
+		cursor: default;
+		margin: 0 15px;
+		color: #D1D1D1;
+	}
+		.main-header .hidden-menu .hidden-menu-block a{
+			display: block;
+			text-align: center;
+		}
+		.main-header .hidden-menu .hidden-menu-block{
+			display: none;
+			position: absolute;
+			width: 150px;
+			background: black;
+			left: calc(50% - 75px);
+		}
+.main-header.fixed{
+	background: rgba(0,0,0,.7);
+	padding: 14px 0px 14px 0;
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+}
+	.main-header.fixed *{
+		font-size: 24px;
+	}
+		.main-header.fixed .hidden-menu .hidden-menu-block{
+			top: 100%;
+		}
+			.main-header.fixed .hidden-menu .hidden-menu-block a{
+				margin-top: 15px;
+			}
+		.main-header .hidden-menu:hover .hidden-menu-block{
+			display: block !important;
+		}
+.main-header.static{
+	background: black;
+	padding: 5px 0px 5px 0;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	width: 100%;
+}
+	.main-header.static *{
+		font-size: 30px;
+	}
+	.main-header.static .hidden-menu{
+		height: 100%;
+	}
+	.main-header.static .hidden-menu .hidden-menu-block{
+			bottom: 100%;
+		}
+			.main-header.static .hidden-menu .hidden-menu-block a{
+				margin-bottom: 15px;
+			}
+
+
+.main-footer{
+	background-color: #111;
+	box-shadow: 0 -10px 30px 0 black;
+	padding: 10px 30px 10px 30px;
+}
+	.follow-us{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+		.follow-us h2{
+			color: #FFC400;
+			font-size: 30px;
+			margin-top: -5px;
+			margin-right: 20px;
+		}
+		.follow-us .icon{
+			font-size: 30px;
+			margin-right: 20px;
+			margin-left: 20px;
+		}
+			.follow-us .icon:hover{
+				color: #FFC400;
+			}
+	.copyright{
+		display: flex;
+		flex-flow: column wrap;
+		align-items: flex-end;
+	}
+		.copyright .copyright-img:first-child{
+			width: 100px;
+		}
+		.copyright .copyright-img:last-child{
+			width: 200px;
+		}
+
+
+
+section{
+	box-sizing: border-box;
+	padding: 30px 30px;
+}
+
+
+/*Buttons*/
+.slide-btn{
+	position: absolute;
+	right: 0;
+	top: calc(50% - 20px);
+	width: 40px;
+	height: 40px;
+	background: #FFC400;
+	cursor: pointer;
+	transition: all ease .4s;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+	.slide-btn:hover{
+		background: #FECE2D;
+	}
+	.slide-btn p{
+		cursor: pointer;
+		font-size: 30px;
+		color: #2D2D2DFF;
+	}
+	.slide-btn-left{
+		right: 105%;
+		transform: rotateY(180deg);
+	}
+	.slide-btn-right{
+		left: 105%;
+	}
+
+
+
+/*всплывающие окна*/
+.iframe-block-container{
+	height: 100vh;
+	width: 100vw;
+	background: rgba(0,0,0,.9);
+	position:fixed;
+	z-index:100;
+	overflow: hidden
+}
+	.iframe-block-container .iframe-block{
+		height: 77.17750826901874vh;
+		width: 71.42857142857143vw;
+		background: black;
+		border: 2px solid #BC7D57FF;
+		box-shadow: 0 0 20px 5px #BC7D57FF;
+		position: relative;
+	}
+		.iframe-block-container .iframe-block .close-iframe-block{
+			height: 50px;
+			width: 50px;
+			background: #BC7D57FF;
+			border: 2px solid #BC7D57FF;
+			box-shadow: 0 0 20px 5px #BC7D57FF;
+			position: absolute;
+			border-radius: 5px;
+			top:0;
+			left: 100%;
+			cursor: pointer;
+		}
+		.iframe-block-container .iframe-block iframe{
+			height: 77.17750826901874vh;
+			width: 71.42857142857143vw;
+		}
+
+
+.img-block-container{
+	height: 100vh;
+	width: 100vw;
+	background: rgba(0,0,0,.9);
+	position:fixed;
+	z-index:100;
+	overflow: hidden
+}
+	.img-block-container .img-block{
+		height: 80vh;
+		width: 80vw;
+		border: 2px solid #8E906EFF;
+		box-shadow: 0 0 20px 5px #8E906EFF;
+		position: relative;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center, center;
+		transition: all ease .3s;
+	}
+		.img-block-container .img-block .close-img-block{
+			height: 50px;
+			width: 50px;
+			background: #8E906EFF;
+			border: 2px solid #8E906EFF;
+			box-shadow: 0 0 20px 5px #8E906EFF;
+			position: absolute;
+			border-radius: 5px;
+			top:0;
+			left: 100%;
+			cursor: pointer;
+		}
