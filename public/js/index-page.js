@@ -207,6 +207,15 @@ window.onload = function(){
 	};
 
 
+let buySectionHeight = function(){
+	let elem = document.getElementsByClassName("slider-buy-section-container");
+	let elemHeight = 0;
+
+	for(var i=0; i<elem.length; i++)if(elemHeight < elem[i].offsetHeight) elemHeight = elem[i].offsetHeight; // супер сокращенная форма цикла с if
+	
+	document.querySelector(".slider-buy-list-container").style.height = elemHeight + "px";
+}();
+
 
 
 };

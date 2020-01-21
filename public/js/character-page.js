@@ -6,12 +6,12 @@ var sliderCharacters = {
 		"../public/img/character-page/Ellie Williams/5.jpg", "../public/img/character-page/Ellie Williams/6.jpg"]
 	},
 	JoelMiller: {
-		img: ["../public/img/character-page/Joel miller/1.jpg", "../public/img/character-page/Joel miller/2.jpg",
-		"../public/img/character-page/Joel miller/3.jpg", "../public/img/character-page/Joel miller/4.jpg"]
+		img: ["../public/img/character-page/Joel Miller/1.jpg", "../public/img/character-page/Joel Miller/2.jpg",
+		"../public/img/character-page/Joel Miller/3.jpg", "../public/img/character-page/Joel miller/4.jpg"]
 	},
 	TommyMiller: {
-		img: ["../public/img/character-page/Tommy miller/1.jpg", "../public/img/character-page/Tommy miller/2.jpg",
-		"../public/img/character-page/Tommy miller/3.jpg"]
+		img: ["../public/img/character-page/Tommy Miller/1.jpg", "../public/img/character-page/Tommy Miller/2.jpg",
+		"../public/img/character-page/Tommy Miller/3.jpg"]
 	}
 };
 // создаем переменные, что будут использоваться в будущем в функциях слайдера с картинками

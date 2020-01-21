@@ -3,6 +3,15 @@ var windowWidthOneProcent = (window.innerWidth / 100);
 	windowHeightOneProcent = (window.innerHeight / 100);
 
 
+// подключение мобильного или комп хедера
+function windowSizeCheck(){
+	if(window.innerWidth < 1000){
+		
+	}
+	else{
+
+	}
+}
 
 
 // ФУНКЦИИ

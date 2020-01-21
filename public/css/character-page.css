@@ -29,7 +29,7 @@
 			background-image: url("../img/character-page/slider-front-texture-top.png"), url("../img/character-page/slider-front-texture-bottom.png");
 			background-repeat: no-repeat, no-repeat;
 			background-size: 20% 27%, 100% 26%;
-			background-position: top left, bottom;
+			background-position: left top, left 101%; /* опустил вниз на 101% потому, что проглядывался небольшой зазор между текстурой и изображением */
 		}
 	.img-slider{
 		position: relative;
