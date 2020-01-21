@@ -1,9 +1,7 @@
 /* character pages css */
 .character-page-article-container{
 	box-sizing: border-box;
-	background: linear-gradient(to right, black 0%, black 60%, #111 100%);
-	height: 100vh;
-	padding: 13.67144432194046vh 0 7.166482910694598vh 0;
+	background: black;
 }
 	.character-page-article{
 		position: relative;
@@ -14,8 +12,7 @@
 	/* переключение изображений персонажа */
 	.img-slider-container{
 		box-sizing: border-box;
-		width: 50vw;
-		padding: 0 1.785714285714286vw;
+		width: 100%;
 	}
 	.img-slider-second-container{
 		position: relative;
@@ -26,16 +23,15 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-image: url("../img/character-page/slider-front-texture-top.png"), url("../img/character-page/slider-front-texture-bottom.png");
-			background-repeat: no-repeat, no-repeat;
-			background-size: 20% 27%, 100% 26%;
-			background-position: left top, left 101%; /* опустил вниз на 101% потому, что проглядывался небольшой зазор между текстурой и изображением */
+			background-image: url("../img/character-page/slider-front-texture-bottom.png");
+			background-repeat: no-repeat;
+			background-size: 100% 26%;
+			background-position: left 101%; /* опустил вниз на 101% потому, что проглядывался небольшой зазор между текстурой и изображением */
 		}
 	.img-slider{
 		position: relative;
-		margin: auto;
-		width: 45.89285714285714vw;
-		height: 80.59536934950386vh;
+		width: 100vw;
+		height: 50vh;
 	}
 		.img-slider .img-slider-picture{
 			position: absolute;
@@ -76,10 +72,12 @@
 
 /* Слайдер описания персонажа */
 	.text-slider-container{
+		box-sizing: border-box;
 		overflow: hidden;
-		width: 40vw;
+		width: calc(100vw - 10px);/* изменил */
 		height: 80.59536934950386vh;
-		margin-top: -1.323042998897464vh;
+		margin-top: 0;/* изменил */
+		padding: 0px 5px;
 	}
 		.text-slider-container hr{
 			margin: 10px 0 30px 0;
@@ -93,9 +91,54 @@
 		.text-slider-container .text-slider-page{
 			box-sizing: border-box;
 			overflow: auto;
-			width: 40vw;
+			width: calc(100vw - 10px);
 			height: 66.15214994487321vh;
 		}
 		.text-slider-container .text-slider-paragraph{
 			padding-right: 6px;
 		}
+
+
+
+@media screen and (min-width: 1200px){
+	.character-page-article-container{
+		background: linear-gradient(to right, black 0%, black 60%, #111 100%);
+		height: 100vh;
+		padding: 13.67144432194046vh 0 7.166482910694598vh 0;
+	}
+	.character-page-article{
+		display: flex;
+		flex-flow: wrap row;
+		justify-content: flex-start;
+	}
+	.img-slider-container{
+		width: 50vw;
+		padding: 0 1.785714285714286vw;
+	}
+	.img-slider-second-container .img-slider-filter{
+		background-image: url("../img/character-page/slider-front-texture-top.png"), url("../img/character-page/slider-front-texture-bottom.png");
+		background-repeat: no-repeat, no-repeat;
+		background-size: 20% 27%, 100% 26%;
+		background-position: left top, left 101%;
+	}
+	.img-slider{
+		position: relative;
+		margin: auto;
+		width: 45.89285714285714vw;
+		height: 80.59536934950386vh;
+	}
+	.text-slider-container{
+		box-sizing: border-box;
+		overflow: hidden;
+		width: 40vw;
+		height: 80.59536934950386vh;
+		margin-top: -1.323042998897464vh;
+		padding: 0px;
+	}
+	.text-slider-container .text-slider-page{
+		box-sizing: border-box;
+		overflow: auto;
+		width: 40vw;
+		height: 66.15214994487321vh;
+	}
+}

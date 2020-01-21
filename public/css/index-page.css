@@ -33,11 +33,10 @@
 	.first-section .buy-btn{
 		position: absolute;
 		z-index: 2;
-		bottom: 5.30760749724366vh;
-		right: 1.785714285714286vw;
+		bottom: 0; /* изменил */
 		background-image: url("../img/index-page/rock-texture.jpg");
 		background-color: rgba(255, 101, 0, .6);
-		padding: 10px 92px;
+		padding: 10px 0;
 		font-size: 35px;
 		color: transparent;
 		border-radius: 3px;
@@ -46,9 +45,12 @@
 			content: 'КУПИТЬ';
 			position: absolute;
 			top: 0;
+			bottom: 0;
 			left: 0;
+			right: 0;
 			z-index: 2;
-			padding: 10px 92px;
+			padding: 10px 0;
+			text-align: center;
 			background-image: linear-gradient(to bottom, rgba(169, 69, 1, .7) 10%, rgba(169, 69, 1, .8) 30%,
 				rgba(169, 69, 1, .8) 70%, rgba(169, 69, 1, .7) 90%, rgba(169, 69, 1, .7));
 			color: white;
@@ -524,9 +526,18 @@
 
 
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1199px){
+	.first-section .buy-btn{
+		width: 100%;
+		left: 0;
+	}
 	.fifth-section form #emailSubmitBtn{
 		width: 100%;
+	}
+}
+@media screen and (min-width: 900px){
+	.slider-buy-header-btns-list{
+		flex-flow: wrap row;
 	}
 }
 @media screen and (min-width: 1200px){
@@ -542,6 +553,15 @@
 		background-size:  100% 20%, 100% 12%;
 		background-position: top, bottom;
 	}
+	.first-section .buy-btn{
+		bottom: 5.30760749724366vh;
+		right: 1.785714285714286vw;
+		padding: 10px 92px;
+	}
+		.first-section .buy-btn::after{;
+			padding: 10px 92px;
+			text-align: center;
+		}
 
 
 	.second-section .text-block{
@@ -573,9 +593,6 @@
 		min-width: 1000px;
 		width: 59.52380952380952vw;
 		margin: 10vh auto 10vh auto;
-	}
-	.slider-buy-header-btns-list{
-		flex-flow: wrap row;
 	}
 	.slider-buy-section{
 		flex-flow: wrap row;

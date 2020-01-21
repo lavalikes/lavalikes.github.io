@@ -1,7 +1,3 @@
-// изменение закрепления хедера
-var	headerFixation = false;
-	headerTop = document.getElementsByClassName("main-header")[0].offsetTop;
-
 
 // создание сменяющихся секций блока покупки
 var lastBuySectionBtnActive = document.getElementsByClassName("slider-buy-header-btns")[0];
@@ -98,21 +94,7 @@ function redirectionIndexPageContenWindowFunc(){
 
 window.onload = function(){
 
-
-
-	// события на прокрутку, открепление хедера
-	window.addEventListener("scroll", function(){
-		if(pageYOffset >= headerTop && headerFixation === false){
-			var element = document.getElementsByClassName("main-header")[0];
-			changeClassOfElementFunc(element, "static", "fixed");
-			headerFixation = true;
-		} else if(pageYOffset < headerTop && headerFixation === true){
-			var element = document.getElementsByClassName("main-header")[0];
-			changeClassOfElementFunc(element, "fixed", "static");
-			headerFixation = false;
-		}
-	});
-	// события на прокрутку страницы
+	// события на прокрутку страницы, по нажатию на кнопки хедера
 	for(var i=0; i<document.getElementsByClassName("scrolling-page").length; i++){
 		var element = document.getElementsByClassName("scrolling-page")[i];
 		element.addEventListener("click", indexPageScrollingFunc);
@@ -207,14 +189,15 @@ window.onload = function(){
 	};
 
 
-let buySectionHeight = function(){
-	let elem = document.getElementsByClassName("slider-buy-section-container");
-	let elemHeight = 0;
+	let buySectionHeight = function(){
+		let elem = document.getElementsByClassName("slider-buy-section-container");
+		let elemHeight = 0;
 
-	for(var i=0; i<elem.length; i++)if(elemHeight < elem[i].offsetHeight) elemHeight = elem[i].offsetHeight; // супер сокращенная форма цикла с if
-	
-	document.querySelector(".slider-buy-list-container").style.height = elemHeight + "px";
-}();
+		for(var i=0; i<elem.length; i++)if(elemHeight < elem[i].offsetHeight) elemHeight = elem[i].offsetHeight; // супер сокращенная форма цикла с if
+		
+		document.querySelector(".slider-buy-list-container").style.height = elemHeight + "px";
+	console.log(elemHeight);
+	}(); // самозапускающаяся функция
 
 
 

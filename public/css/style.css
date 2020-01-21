@@ -1,4 +1,69 @@
 /* css стили применяющиеся для элементов присутствующий на всех страницах*/
+/* хедер для телефонов и планшетов */
+.header-activator{
+		position: fixed;
+		top: 10px;
+		left: 10px;
+
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+	}
+		.header-activator-button{
+			width: 100%;
+			height: 100%;
+
+			stroke: rgba(255, 101, 0, .7);
+			stroke-width: 5px;
+
+			fill: none;
+		}
+	.mobile-header{
+		background: rgba(0,0,0,.8);
+		position: fixed;
+		left: -100%;
+		z-index: 100;
+		height: 100vh;
+		width: 100vw;
+		transition: all ease .3s;
+	}
+			.mobile-header li{
+				margin: 5px 0;
+			}
+			.mobile-header a{
+				font-size: 30px;
+			}
+			.mobile-header a:hover{
+				color: #FFC400;
+			}
+			.mobile-header ul{
+				height: 100vh;
+				width: 75%;
+				background: black;
+				display: flex;
+				flex-flow: wrap column;
+				justify-content: center;
+				align-items: center;
+
+				list-style-type: none;
+				text-align: left;
+			}
+			.mobile-header .character-pages{
+				padding: 0px 50px;
+				border-top: 1px solid white;
+				border-bottom: 1px solid white;
+			}
+			.mobile-header .character-pages p{
+				color: rgba(255, 101, 0, 1);
+			}
+			.mobile-header .character-pages div{
+				display: flex;
+				flex-flow: wrap column;
+				align-items: center;
+			}
+
+
+/* хедер для пк */
 .main-header li>a{
 	margin: 0 15px;
 }
@@ -29,6 +94,7 @@
 	background: rgba(0,0,0,.7);
 	padding: 14px 0px 14px 0;
 	position: fixed;
+	top: 0;
 	z-index: 10;
 	width: 100%;
 }
@@ -98,3 +164,57 @@
 	.slide-btn-right{
 		left: 105%;
 	}
+
+
+
+.flex-start{
+	display: flex;
+	flex-flow: wrap row;
+}
+.flex-center{
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: center;
+}
+.flex-center-center{
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: center;
+	align-items: center;
+}
+.flex-space-between{
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: space-between;
+}
+.flex-column-start{
+	display: flex;
+	flex-flow: wrap column;
+}
+.flex-column-center{
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+}
+.flex-column-center-center{
+	display: flex;
+	flex-flow: wrap column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* скролл(прокрутка страницы) */
+::-webkit-scrollbar-track{
+background-color:#444444FF;
+box-shadow:0px 0px 3px #000 inset;
+}
+
+::-webkit-scrollbar-thumb{
+background-color:#FFB000;
+border-radius: 5px;
+}
+
+::-webkit-scrollbar{
+width: 5px;
+}

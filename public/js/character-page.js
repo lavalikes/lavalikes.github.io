@@ -6,7 +6,8 @@ var sliderCharacters = {
 		"../public/img/character-page/Ellie Williams/5.jpg", "../public/img/character-page/Ellie Williams/6.jpg"]
 	},
 	JoelMiller: {
-		img: []
+		img: ["../public/img/character-page/Joel Miller/1.jpg", "../public/img/character-page/Joel Miller/2.jpg",
+		"../public/img/character-page/Joel Miller/3.jpg", "../public/img/character-page/Joel miller/4.jpg"]
 	},
 	TommyMiller: {
 		img: ["../public/img/character-page/Tommy Miller/1.jpg", "../public/img/character-page/Tommy Miller/2.jpg",
