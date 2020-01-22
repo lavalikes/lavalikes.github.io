@@ -473,15 +473,20 @@
 	}
 		.iframe-block-container .iframe-block .close-iframe-block{
 			position: absolute;
-			top: 0%;
-			right: 0%
-			height: 50px;
-			width: 50px;
+			top:0;
+			right: 0;
+			height: 25px;
+			width: 25px;
 			background: #BC7D57FF;
 			border: 2px solid #BC7D57FF;
 			box-shadow: 0 0 20px 5px #BC7D57FF;
 			cursor: pointer;
 		}
+			.iframe-block-container .iframe-block .close-iframe-block p{
+				color: #303030FF;
+				font-size: 15px; 
+				cursor:pointer
+			}
 		.iframe-block-container .iframe-block iframe{
 			height: 30vh
 			width: 90vw
@@ -765,6 +770,9 @@
 			font-size: 16px;
 	}
 
+	.iframe-block-container .iframe-block .close-iframe-block p{
+		font-size: 0.8928571428571429vw; 
+	}
 	.img-block-container .img-block .close-img-block p{
 		font-size: 0.8928571428571429vw; 
 	}
