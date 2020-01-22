@@ -59,9 +59,9 @@ var siteHeadersCreator = function(){
 			HTML += '<header class="main-header static">' 
 				+ '<ul class="flex-start">' 
 				+ '<li><a href="#" class="font-family-HeadlinerNo45">Главная</a></li>' 
-				+ '<li class="hidden-menu">' 
+				+ '<li class="character-pages">' 
 				+ '<p class="font-family-HeadlinerNo45">Персонажи</p>' 
-				+ '<div class="hidden-menu-block">'
+				+ '<div>'
 				+ '<a href="character pages/Ellie Williams.html" class="font-family-HeadlinerNo45">Элли Уильямс</a>'
 				+ '<a href="character pages/Joel Miller.html" class="font-family-HeadlinerNo45">Джоэл Миллер</a>'
 				+ '<a href="character pages/Tommy Miller.html" class="font-family-HeadlinerNo45">Томми Миллер</a>'
@@ -74,9 +74,9 @@ var siteHeadersCreator = function(){
 				HTML += '<header class="main-header fixed">' 
 				+ '<ul class="flex-start">'
 				+ '<li><a href="../index.html" class="font-family-HeadlinerNo45">Главная</a></li>' 
-				+ '<li class="hidden-menu">' 
+				+ '<li class="character-pages">' 
 				+ '<p class="font-family-HeadlinerNo45">Персонажи</p>' 
-				+ '<div class="hidden-menu-block">'
+				+ '<div>'
 				+ '<a href="Ellie Williams.html" class="font-family-HeadlinerNo45">Элли Уильямс</a>'
 				+ '<a href="Joel Miller.html" class="font-family-HeadlinerNo45">Джоэл Миллер</a>'
 				+ '<a href="Tommy Miller.html" class="font-family-HeadlinerNo45">Томми Миллер</a>'
@@ -100,7 +100,7 @@ var siteHeadersCreator = function(){
 
 
 // ФУНКЦИИ
-// базовые функции работы с классами
+// базовые функции работы с классами стиля
 function changeClassOfElementFunc(element, removeClass, addClass){
 	var element = element;
 		removeClass = removeClass;
