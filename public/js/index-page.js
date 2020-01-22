@@ -1,7 +1,7 @@
 
 // создание сменяющихся секций блока покупки
-var lastBuySectionBtnActive = document.getElementsByClassName("slider-buy-header-btns")[0];
-	lastBuySectionActive = document.getElementsByClassName("slider-buy-section-container")[0];
+var lastBtn = document.getElementsByClassName("slider-buy-header-btns");
+	lastSlide = document.getElementsByClassName("slider-buy-section-container");
 
 
 //mail
@@ -83,8 +83,8 @@ function indexPageActiveteContentWindowFunc(element){
 }
 
 function redirectionIndexPageContenWindowFunc(){
-	var element = this;
-	indexPageActiveteContentWindowFunc(element);
+	var elem = this;
+	indexPageActiveteContentWindowFunc(elem);
 }
 
 
@@ -96,8 +96,8 @@ window.onload = function(){
 
 	// события на прокрутку страницы, по нажатию на кнопки хедера
 	for(var i=0; i<document.getElementsByClassName("scrolling-page").length; i++){
-		var element = document.getElementsByClassName("scrolling-page")[i];
-		element.addEventListener("click", indexPageScrollingFunc);
+		var elem = document.getElementsByClassName("scrolling-page")[i];
+		elem.addEventListener("click", indexPageScrollingFunc);
 	}
 
 
@@ -107,18 +107,18 @@ window.onload = function(){
 	document.getElementById("emailInput").onkeyup = function(){
 		if(emailPattern.test(this.value) && emailButtonIsActive === false)
 		{
-			var element = document.getElementById("emailSubmitBtn");
+			var elem = document.getElementById("emailSubmitBtn");
 
-			addActiveClassToElementFunc(element, "active");
+			console.log(elem);
 			// включаем кнопку убирая аттрибут disabled
 			document.getElementById("emailSubmitBtn").removeAttribute("disabled");
 			emailButtonIsActive = true;
 		} 
 		else if(!emailPattern.test(this.value) && emailButtonIsActive === true)
 		{
-			var element = document.getElementById("emailSubmitBtn");
+			var elem = document.getElementById("emailSubmitBtn");
 
-			removeActiveClassToElementFunc(element, "active");
+			removeActiveClassToElementFunc(elem);
 			// включаем кнопку убирая аттрибут disabled
 			document.getElementById("emailSubmitBtn").setAttribute("disabled", "true");
 			emailButtonIsActive = false;
@@ -127,16 +127,16 @@ window.onload = function(){
 
 		if(this.value != "" && emailInputActive === false)
 		{
-			var element = document.getElementById("emailForm");
+			var elem = document.getElementById("emailForm");
 
-			addActiveClassToElementFunc(element, "active");
+			console.log(elem);
 			emailInputActive = true;
 		}
 		else if((this.value == "" || this.value == " ") && emailInputActive === true)
 		{
-			var element = document.getElementById("emailForm");
+			var elem = document.getElementById("emailForm");
 
-			removeActiveClassToElementFunc(element, "active");
+			removeActiveClassToElementFunc(elem);
 			emailInputActive = false;
 		}
 	}
@@ -146,8 +146,8 @@ window.onload = function(){
 
 	// события на секцию покупки
 	for(var i=0; i<document.getElementsByClassName("slider-buy-header-btns").length; i++){
-		var element = document.getElementsByClassName("slider-buy-header-btns")[i];
-		element.addEventListener("click", changeSliderBlockFunc);
+		var elem = document.getElementsByClassName("slider-buy-header-btns")[i];
+		elem.addEventListener("click", changeSliderBlockFunc);
 	}
 
 
@@ -175,8 +175,8 @@ window.onload = function(){
 
 	// вставка видео при нажатии на кнопку
 	document.getElementById("activeWideoIframe").onclick = function(){
-		var element = this;
-		indexPageActiveteContentWindowFunc(element);
+		var elem = this;
+		indexPageActiveteContentWindowFunc(elem);
 	};
 
 
@@ -184,8 +184,8 @@ window.onload = function(){
 
 	// создание события при нажатии на картинки
 	for(var i=0; i<document.getElementsByClassName("index-page-img-slider-block-image").length; i++){
-		var element = document.getElementsByClassName("index-page-img-slider-block-image")[i];
-		element.addEventListener("click", redirectionIndexPageContenWindowFunc);
+		var elem = document.getElementsByClassName("index-page-img-slider-block-image")[i];
+		elem.addEventListener("click", redirectionIndexPageContenWindowFunc);
 	};
 
 

@@ -60,9 +60,6 @@
 			cursor: pointer;
 			transition: color ease .3s;
 		}
-			.img-slider-nums-list .img-slider-num:hover{
-				color: #D6B600;
-			}
 			.img-slider-nums-list .img-slider-num.active{
 				color: #FFDB00;
 			}
@@ -133,6 +130,9 @@
 		padding: 0 15px;
 		font-size: 40px; /* изменил */
 	}
+			.img-slider-nums-list .img-slider-num:hover{
+				color: #D6B600;
+			}
 	.text-slider-container{
 		box-sizing: border-box;
 		overflow: hidden;

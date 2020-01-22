@@ -6,12 +6,12 @@ headerTop = document.getElementsByClassName("main-header")[0].offsetTop;
 // события на прокрутку, открепление pc хедера
 window.addEventListener("scroll", function(){
 	if(pageYOffset >= headerTop && headerFixation === false){
-		var element = document.getElementsByClassName("main-header")[0];
-		changeClassOfElementFunc(element, "static", "fixed");
+		var elem = document.getElementsByClassName("main-header")[0];
+		changeClassOfElementFunc(elem, "static", "fixed");
 		headerFixation = true;
 	} else if(pageYOffset < headerTop && headerFixation === true){
-		var element = document.getElementsByClassName("main-header")[0];
-		changeClassOfElementFunc(element, "fixed", "static");
+		var elem = document.getElementsByClassName("main-header")[0];
+		changeClassOfElementFunc(elem, "fixed", "static");
 		headerFixation = false;
 	}
 });

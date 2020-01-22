@@ -15,35 +15,29 @@ var sliderCharacters = {
 	}
 };
 // создаем переменные, что будут использоваться в будущем в функциях слайдера с картинками
-var lastImgSectionBtnActivate = 0;
-	lastImgSectionBlockActivate = 0;
+var lastBtn = document.getElementsByClassName("img-slider-num");
+	lastSlide = document.getElementsByClassName("img-slider-picture");
+var character =  document.getElementsByClassName("character-name")[0].id;
 
 
 
 
 
 
-
-function addStyleAndEventToImgSliderSectionFunc()
+function addStyleAndEventToImgSliderSectionFunc(characterPcs)
 {
 	// имя персонажа, для поиска его в объекте sliderCharacters
-	var characterName = document.getElementsByClassName("character-name")[0].id;
 
 	for( var i=0; i<document.getElementsByClassName("img-slider-num").length; i++)
 	{
-		// в начале каждого цикла будут создаваться новые переменные содержащие в себе элемент класса под номером i. 
-		// Таким образом будем последовательно задавать стиль элементу за элементом
-		var elementSlide = document.getElementsByClassName("img-slider-picture")[i];
-			elementNumber = document.getElementsByClassName("img-slider-num")[i];
-
-		// создаем изображения в наших элементах списка, устанавливаем им необходимые значения
-		elementSlide.style.background = "url('" + sliderCharacters[characterName].img[i] + "')";
-		elementSlide.style.backgroundRepeat = "no-repeat";
-		elementSlide.style.backgroundSize = "cover";
-		elementSlide.style.backgroundPosition = "center"; 
+		// последовательно каждому элементу класса задаем картинку и ее положение
+		let elemSlide = document.getElementsByClassName("img-slider-picture")[i];
+			elemNumber = document.getElementsByClassName("img-slider-num")[i];
+		elemSlide.style.background = "url('" + characterPcs[i] + "') center no-repeat";
+		elemSlide.style.backgroundSize = "cover";
 
 		// добавляем реакцию чисел под слайдером на нажатие
-		elementNumber.addEventListener("click", changeSliderBlockFunc);
+		elemNumber.addEventListener("click", changeSliderBlockFunc);
 	}
 }
 
@@ -52,13 +46,13 @@ function creatingImgSliderSectionFunc()
 	// эти переменные будут накапливать в себе html код в виде строки, после чего этот код будет использован для создания элементов
 	var creatingSlidesHTML = "";
 		creatingSlidesNumHTML = "";
+		characterPcs = sliderCharacters[character].img;
 
 	// получаем имя персонажа
-	var characterName = document.getElementsByClassName("character-name")[0].id;
 	// в цикле += означает добивать к текущему значению следующий код
 	// в первом повторении цикла, когда наш счетчик(i) равен нулю мы добавляем к классу элементов дополнительные классы активаторы, 
 	// чтобы при заходе на страницу у пользователя перед глазами слайдер не был пуст. стиль класс active прописан зараннее
-	for( var i=0; i<sliderCharacters[characterName].img.length; i++)
+	for( var i=0; i<characterPcs.length; i++)
 	{
 		if(i === 0)
 		{
@@ -76,12 +70,8 @@ function creatingImgSliderSectionFunc()
 	document.getElementsByClassName("img-slider")[0].insertAdjacentHTML("afterbegin", creatingSlidesHTML);
 	document.getElementsByClassName("img-slider-nums-list")[0].insertAdjacentHTML("afterbegin", creatingSlidesNumHTML);
 
-	// сейчас, когда элементы с классами были созданы, запоминаем по первому элементу из этих двух классов
-	lastImgSectionBtnActivate = document.getElementsByClassName("img-slider-num")[0];
-	lastImgSectionBlockActivate = document.getElementsByClassName("img-slider-picture")[0];
-
-	// стилизуем их и устанавливаем функционал
-	addStyleAndEventToImgSliderSectionFunc();
+	// стилизуем созданные элементы и устанавливаем функционал
+	addStyleAndEventToImgSliderSectionFunc(characterPcs);
 }
 
 

@@ -1,6 +1,7 @@
 /* js подключаемый ко всем страницам, обладаем функциями используемых на всех страницах*/
 var windowWidthOneProcent = (window.innerWidth / 100);
 	windowHeightOneProcent = (window.innerHeight / 100);
+var slideNum = 0;
 
 
 // подключение мобильного или комп хедера
@@ -101,71 +102,102 @@ var siteHeadersCreator = function(){
 
 // ФУНКЦИИ
 // базовые функции работы с классами стиля
-function changeClassOfElementFunc(element, removeClass, addClass){
-	var element = element;
+function changeClassOfElementFunc(elem, removeClass, addClass){
+	var elem = elem;
 		removeClass = removeClass;
 		addClass = addClass;
 
-	element.classList.remove(removeClass);
-	element.classList.add(addClass);
+	elem.classList.remove(removeClass);
+	elem.classList.add(addClass);
 };
-function addActiveClassToElementFunc(element, addClass){
-	element.classList.add(addClass);
+function addActiveClassToElementFunc(...args){
+	for (var i = 0; i < args.length; i++) args[i].classList.add("active");
 }
-function removeActiveClassToElementFunc(element, removeClass){
-	element.classList.remove(removeClass);
+function removeActiveClassToElementFunc(...args){
+	for (var i = 0; i < args.length; i++) args[i].classList.remove("active");
 }
 
 
 
+
+// было тяжело, но я сжал эту функцию на строк 50, при этом сохранив весь функционал
 // слайдеры с несколькими кнопками
 function changeSliderBlockFunc()
 {
-	// определение переменных, которые будут использоваться дальше в коде, для сокращения кода и уменьшения вызова команд
-	if(this.classList.contains("slider-buy-header-btns"))
-	{
-		var	lastBtnActive = lastBuySectionBtnActive;
-			lastSectionActive = lastBuySectionActive;
-			sectionSlider = "buy";
-			sectionBtnClass = document.getElementsByClassName("slider-buy-header-btns");
-			sectionBlockClass = document.getElementsByClassName("slider-buy-section-container");
-	}
-	else if(this.classList.contains("img-slider-num"))
-	{
-		var lastBtnActive = lastImgSectionBtnActivate;
-			lastSectionActive = lastImgSectionBlockActivate;
-			sectionSlider = "img";
-			sectionBtnClass = document.getElementsByClassName("img-slider-num");
-			sectionBlockClass = document.getElementsByClassName("img-slider-picture");
-	}
-	if(lastBtnActive === this){
+	if(lastBtn[slideNum] === this){
 		return false;
 	} 
 	else
 	{
-		removeActiveClassToElementFunc(lastBtnActive, "active");
-		removeActiveClassToElementFunc(lastSectionActive, "active");
+		removeActiveClassToElementFunc(lastBtn[slideNum], lastSlide[slideNum]);
 
-		for(var i=0; i<sectionBtnClass.length; i++)
+		for(var i=0; i<lastBtn.length; i++)
 		{
-			if(this === sectionBtnClass[i])
+			if(this === lastBtn[i])
 			{
-				if(sectionSlider === "buy")
-				{
-					lastBuySectionBtnActive = this;
-					lastBuySectionActive = sectionBlockClass[i];
-					addActiveClassToElementFunc(lastBuySectionBtnActive, "active")
-					addActiveClassToElementFunc(lastBuySectionActive, "active");
-				} 
-				else if(sectionSlider === "img")
-				{
-					lastImgSectionBtnActivate = this;
-					lastImgSectionBlockActivate = sectionBlockClass[i];
-					addActiveClassToElementFunc(lastImgSectionBtnActivate, "active")
-					addActiveClassToElementFunc(lastImgSectionBlockActivate, "active");
-				}
+				slideNum = i;
+				addActiveClassToElementFunc(lastBtn[slideNum], lastSlide[slideNum])
 				break;
 			}
 		}
 	}
-}
+};
+
+
+
+
+
+
+
+
+
+// function changeSliderBlockFunc()
+// {
+// 	// определение переменных, которые будут использоваться дальше в коде, для сокращения кода и уменьшения вызова команд
+// 	if(this.classList.contains("slider-buy-header-btns"))
+// 	{
+// 		var	lastBtnActive = lastBuySectionBtnActive;
+// 			lastSectionActive = lastBuySectionActive;
+// 			sectionSlider = "buy";
+// 			sectionBtnClass = document.getElementsByClassName("slider-buy-header-btns");
+// 			sectionBlockClass = document.getElementsByClassName("slider-buy-section-container");
+// 	}
+// 	else if(this.classList.contains("img-slider-num"))
+// 	{
+// 		var lastBtnActive = lastImgSectionBtnActivate;
+// 			lastSectionActive = lastImgSectionBlockActivate;
+// 			sectionSlider = "img";
+// 			sectionBtnClass = document.getElementsByClassName("img-slider-num");
+// 			sectionBlockClass = document.getElementsByClassName("img-slider-picture");
+// 	}
+// 	if(lastBtnActive === this){
+// 		return false;
+// 	} 
+// 	else
+// 	{
+// 		removeActiveClassToElementFunc(lastBtnActive, "active");
+// 		removeActiveClassToElementFunc(lastSectionActive, "active");
+
+// 		for(var i=0; i<sectionBtnClass.length; i++)
+// 		{
+// 			if(this === sectionBtnClass[i])
+// 			{
+// 				if(sectionSlider === "buy")
+// 				{
+// 					lastBuySectionBtnActive = this;
+// 					lastBuySectionActive = sectionBlockClass[i];
+// 					addActiveClassToElementFunc(lastBuySectionBtnActive, "active")
+// 					addActiveClassToElementFunc(lastBuySectionActive, "active");
+// 				} 
+// 				else if(sectionSlider === "img")
+// 				{
+// 					lastImgSectionBtnActivate = this;
+// 					lastImgSectionBlockActivate = sectionBlockClass[i];
+// 					addActiveClassToElementFunc(lastImgSectionBtnActivate, "active")
+// 					addActiveClassToElementFunc(lastImgSectionBlockActivate, "active");
+// 				}
+// 				break;
+// 			}
+// 		}
+// 	}
+// }

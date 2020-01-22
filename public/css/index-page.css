@@ -6,7 +6,7 @@
 .first-section{
 	overflow: hidden;
 	position: relative;
-	height: 100vh;
+	height: calc(100vh - 55px);
 }
 	.first-section .first-section-video{
 		position: absolute;
@@ -552,6 +552,7 @@
 		background-repeat: no-repeat, no-repeat;
 		background-size:  100% 20%, 100% 12%;
 		background-position: top, bottom;
+		height: 100vh;
 	}
 	.first-section .buy-btn{
 		bottom: 5.30760749724366vh;

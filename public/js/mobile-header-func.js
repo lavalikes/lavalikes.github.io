@@ -12,34 +12,37 @@ document.getElementById("header-activator").onclick = function(){
 	}
 };
 
-var lastPictureNum = 0;
-var pictureNum = 0;
-document.querySelector(".img-slider-filter").ontouchstart = function(event){
-		let startX = event.targetTouches[0].pageX;
 
-		document.querySelector(".img-slider-filter").ontouchmove = function(event){
-			let x,moveX, elem1,elem2;
-			elem1 = document.getElementsByClassName("img-slider-picture");
-			elem2 = document.getElementsByClassName("img-slider-num");
-			x = event.targetTouches[0].pageX;
-			moveX = x - startX;
-			console.log(moveX);
-			if(moveX > 30 || moveX < -30){
-				if(moveX > 30){
-					if(pictureNum === 0) return false;
-					removeActiveClassToElementFunc(elem2[pictureNum], "active");
-					removeActiveClassToElementFunc(elem1[pictureNum], "active");
-					pictureNum --;
+
+if(!document.getElementsByClassName("first-section-video")[0]){
+	document.querySelector(".img-slider-filter").ontouchstart = function(event){
+			let startX = event.targetTouches[0].pageX;
+
+			document.querySelector(".img-slider-filter").ontouchmove = function(event){
+				let x,moveX;
+				x = event.targetTouches[0].pageX;
+				moveX = x - startX;
+				lastSlide[slideNum].style.transform = "translateX(" + moveX + "px)";
+				if(moveX > 50 || moveX < -50){
+					lastSlide[slideNum].style.transform = "translateX(0px)";
+					if(moveX > 50){
+						if(slideNum === 0) return false;
+						removeActiveClassToElementFunc(lastBtn[slideNum], lastSlide[slideNum]);
+						slideNum --;
+					}
+					else{
+						if(slideNum === 5) return false;
+						removeActiveClassToElementFunc(lastBtn[slideNum], lastSlide[slideNum]);
+						slideNum ++;
+					}
+					lastSectionActive = lastBtn[slideNum];
+					lastBtnActive = lastSlide[slideNum];
+					addActiveClassToElementFunc(lastBtn[slideNum], lastSlide[slideNum]);
+					document.querySelector(".img-slider-filter").ontouchmove = null;
 				}
-				else{
-					if(pictureNum === 5) return false;
-					removeActiveClassToElementFunc(elem2[pictureNum], "active");
-					removeActiveClassToElementFunc(elem1[pictureNum], "active");
-					pictureNum ++;
-				}
-				addActiveClassToElementFunc(elem2[pictureNum], "active");
-				addActiveClassToElementFunc(elem1[pictureNum], "active");
-				document.querySelector(".img-slider-filter").ontouchmove = null;
 			}
+		document.querySelector(".img-slider-filter").ontouchend = function(){
+			lastSlide[slideNum].style.transform = "translateX(0px)";
 		}
 	}
+}
