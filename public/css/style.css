@@ -171,8 +171,13 @@ body{
 		left: 105%;
 	}
 	#character-page-text-slider-btn{
-		top: 0;
+		width: 40px;
+		height: 40px;
+		top: 15px;
 	}
+		#character-page-text-slider-btn p{
+			font-size: 30px;
+		}
 
 
 

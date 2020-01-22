@@ -79,7 +79,7 @@
 	}
 		.text-slider-container hr{
 			width: 100%; /* изменил */
-			margin: 0; /* изменил */
+			margin: 0 0 15px 0; /* изменил */
 			border: 4px solid #FFC400;
 		}
 		.text-slider-container .text-slider-wheel{
@@ -133,6 +133,8 @@
 			.img-slider-nums-list .img-slider-num:hover{
 				color: #D6B600;
 			}
+
+
 	.text-slider-container{
 		box-sizing: border-box;
 		overflow: hidden;
@@ -140,6 +142,11 @@
 		height: 80.59536934950386vh;
 		margin-top: -1.323042998897464vh;
 		padding: 0px;
+	}
+	.text-slider-container .text-slider-wheel{
+		position: relative;
+		transition: all ease .3s;
+		width: 400%;
 	}
 	.text-slider-container .text-slider-page{
 		box-sizing: border-box;
