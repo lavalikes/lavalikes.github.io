@@ -48,7 +48,7 @@ var siteHeadersCreator = function(){
 			+ '</header>';
 
 
-			document.getElementsByTagName("body")[0].insertAdjacentHTML("afterbegin", HTML);
+			createElementAfterBeginFunc(HTML);
 			if(document.getElementsByClassName("first-section-video")[0]){
 				includeJs("public/js/mobile-header-func.js");
 			} else{
@@ -89,7 +89,7 @@ var siteHeadersCreator = function(){
 			+ '</header>';
 
 
-		document.getElementsByTagName("body")[0].insertAdjacentHTML("afterbegin", HTML);
+		createElementAfterBeginFunc(HTML);
 		if(document.getElementsByClassName("first-section-video")[0]){
 			includeJs("public/js/pc-header-func.js");
 		} else{
@@ -116,6 +116,9 @@ function addActiveClassToElementFunc(...args){
 function removeActiveClassToElementFunc(...args){
 	for (var i = 0; i < args.length; i++) args[i].classList.remove("active");
 }
+function createElementAfterBeginFunc(HTML){
+document.getElementsByTagName("body")[0].insertAdjacentHTML("afterbegin", HTML);
+};
 
 
 
@@ -124,9 +127,7 @@ function removeActiveClassToElementFunc(...args){
 // слайдеры с несколькими кнопками
 function changeSliderBlockFunc()
 {
-	if(lastBtn[slideNum] === this){
-		return false;
-	} 
+	if(lastBtn[slideNum] === this) return false;
 	else
 	{
 		removeActiveClassToElementFunc(lastBtn[slideNum], lastSlide[slideNum]);
@@ -142,62 +143,3 @@ function changeSliderBlockFunc()
 		}
 	}
 };
-
-
-
-
-
-
-
-
-
-// function changeSliderBlockFunc()
-// {
-// 	// определение переменных, которые будут использоваться дальше в коде, для сокращения кода и уменьшения вызова команд
-// 	if(this.classList.contains("slider-buy-header-btns"))
-// 	{
-// 		var	lastBtnActive = lastBuySectionBtnActive;
-// 			lastSectionActive = lastBuySectionActive;
-// 			sectionSlider = "buy";
-// 			sectionBtnClass = document.getElementsByClassName("slider-buy-header-btns");
-// 			sectionBlockClass = document.getElementsByClassName("slider-buy-section-container");
-// 	}
-// 	else if(this.classList.contains("img-slider-num"))
-// 	{
-// 		var lastBtnActive = lastImgSectionBtnActivate;
-// 			lastSectionActive = lastImgSectionBlockActivate;
-// 			sectionSlider = "img";
-// 			sectionBtnClass = document.getElementsByClassName("img-slider-num");
-// 			sectionBlockClass = document.getElementsByClassName("img-slider-picture");
-// 	}
-// 	if(lastBtnActive === this){
-// 		return false;
-// 	} 
-// 	else
-// 	{
-// 		removeActiveClassToElementFunc(lastBtnActive, "active");
-// 		removeActiveClassToElementFunc(lastSectionActive, "active");
-
-// 		for(var i=0; i<sectionBtnClass.length; i++)
-// 		{
-// 			if(this === sectionBtnClass[i])
-// 			{
-// 				if(sectionSlider === "buy")
-// 				{
-// 					lastBuySectionBtnActive = this;
-// 					lastBuySectionActive = sectionBlockClass[i];
-// 					addActiveClassToElementFunc(lastBuySectionBtnActive, "active")
-// 					addActiveClassToElementFunc(lastBuySectionActive, "active");
-// 				} 
-// 				else if(sectionSlider === "img")
-// 				{
-// 					lastImgSectionBtnActivate = this;
-// 					lastImgSectionBlockActivate = sectionBlockClass[i];
-// 					addActiveClassToElementFunc(lastImgSectionBtnActivate, "active")
-// 					addActiveClassToElementFunc(lastImgSectionBlockActivate, "active");
-// 				}
-// 				break;
-// 			}
-// 		}
-// 	}
-// }

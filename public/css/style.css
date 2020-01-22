@@ -29,7 +29,7 @@ body{
 		background: rgba(0,0,0,.95);
 		position: fixed;
 		left: -100%;
-		z-index: 100;
+		z-index: 10;
 		height: 100vh;
 		width: 100vw;
 		transition: all ease .3s;
@@ -144,9 +144,9 @@ body{
 .slide-btn{
 	position: absolute;
 	right: 0;
-	top: calc(50% - 20px);
-	width: 40px;
-	height: 40px;
+	top: calc(50% - 10px);
+	width: 20px;
+	height: 20px;
 	background: #FFC400;
 	cursor: pointer;
 	transition: all ease .4s;
@@ -160,7 +160,7 @@ body{
 	}
 	.slide-btn p{
 		cursor: pointer;
-		font-size: 30px;
+		font-size: 15px;
 		color: #2D2D2DFF;
 	}
 	.slide-btn-left{
@@ -213,6 +213,15 @@ body{
 }
 
 @media screen and (min-width: 1200px){
+	.slide-btn{
+		top: calc(50% - 20px);
+		width: 40px;
+		height: 40px;
+	}
+	.slide-btn p{
+		font-size: 30px;
+	}
+
 	/* скролл(прокрутка страницы) */
 	::-webkit-scrollbar-track{
 	background-color:#444444FF;

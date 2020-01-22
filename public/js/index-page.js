@@ -1,4 +1,3 @@
-
 // создание сменяющихся секций блока покупки
 var lastBtn = document.getElementsByClassName("slider-buy-header-btns");
 	lastSlide = document.getElementsByClassName("slider-buy-section-container");
@@ -26,10 +25,10 @@ function indexPageScrollingFunc(){
 
 
 // откроывающиеся окна(видео и изображения)
-function indexPageActiveteContentWindowFunc(element){
-	var element = element;
-	if(element.hasAttribute("data-imgNum")){
-		var imgNum = element.getAttribute("data-imgNum");
+function indexPageActiveteContentWindowFunc(elem){
+	var elem = elem;
+	if(elem.hasAttribute("data-imgNum")){
+		var imgNum = elem.getAttribute("data-imgNum");
 			switcher = "img";
 	} else{
 		var switcher = "iframe";
@@ -39,25 +38,25 @@ function indexPageActiveteContentWindowFunc(element){
 			HTML+= "<div class='img-block' style='background-image: url(public/img/index-page/img-slider/screenshots/screenshot-"+ imgNum +".jpg)'>"
 				+ "<div class='slide-btn slide-btn-right' id='indexPageChangeImgBtnRight'><p>&#10144;</p></div>"
 				+ "<div class='slide-btn slide-btn-left' id='indexPageChangeImgBtnLeft'><p>&#10144;</p></div>";
-		} else{
-			HTML+= "<div class='iframe-block'>";
 		}
+		else{
+			HTML+= "<div class='iframe-block'>";
+		};
 		HTML+= "<div class='close-"+switcher+"-block flex-center-center' id='"+switcher+"CloseBlock'>"
-			+ "<p class='flex-center-center' style='color: #303030FF; font-size: 30px; cursor:pointer'><i class='fas fa-times'></i></p>"
+			+ "<p class='flex-center-center'><i class='fas fa-times'></i></p>"
 			+ "</div>";
 		if(switcher === "iframe"){
 			HTML+= "<iframe marginheight='0' marginwidth='0' vspace='0' hspace='0' src='https://www.youtube.com/embed/qPNiIeKMHyg'"
 				+ "frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>"
 				+ "</iframe>";
-		}
-		HTML+= "</div>"
-			+ "</div>";
+		};
+		HTML+= "</div></div>";
 
-	document.getElementsByTagName("body")[0].insertAdjacentHTML("afterbegin", HTML);
+	createElementAfterBeginFunc(HTML);
 	document.body.style.overflow = 'hidden';
 	document.getElementById(switcher+"CloseBlock").addEventListener("click", function(){
-		document.getElementById(switcher+"BlockContainer").remove();
-		document.body.style.overflow = 'auto';
+	document.getElementById(switcher+"BlockContainer").remove();
+	document.body.style.overflow = 'auto';
 	});
 	if(switcher === "img"){
 		var imgBlock = document.getElementsByClassName("img-block")[0];
@@ -93,6 +92,17 @@ function redirectionIndexPageContenWindowFunc(){
 
 
 window.onload = function(){
+
+	let buySectionHeight = function(){
+		let elem = document.getElementsByClassName("slider-buy-section-container");
+		let elemHeight = 0;
+
+		for(var i=0; i<elem.length; i++) if(elemHeight < elem[i].offsetHeight) elemHeight = elem[i].offsetHeight; // супер сокращенная форма цикла с if
+		
+		document.querySelector(".slider-buy-list-container").style.height = elemHeight + "px";
+	}(); // самозапускающаяся функция
+
+	
 
 	// события на прокрутку страницы, по нажатию на кнопки хедера
 	for(var i=0; i<document.getElementsByClassName("scrolling-page").length; i++){
@@ -187,18 +197,5 @@ window.onload = function(){
 		var elem = document.getElementsByClassName("index-page-img-slider-block-image")[i];
 		elem.addEventListener("click", redirectionIndexPageContenWindowFunc);
 	};
-
-
-	let buySectionHeight = function(){
-		let elem = document.getElementsByClassName("slider-buy-section-container");
-		let elemHeight = 0;
-
-		for(var i=0; i<elem.length; i++)if(elemHeight < elem[i].offsetHeight) elemHeight = elem[i].offsetHeight; // супер сокращенная форма цикла с if
-		
-		document.querySelector(".slider-buy-list-container").style.height = elemHeight + "px";
-	console.log(elemHeight);
-	}(); // самозапускающаяся функция
-
-
 
 };
