@@ -24,9 +24,9 @@ if(!document.getElementsByClassName("first-section-video")[0]){
 				x = event.targetTouches[0].pageX;
 				moveX = x - startX;
 				lastSlide[slideNum].style.transform = "translateX(" + moveX + "px)";
-				if(moveX > 50 || moveX < -50){
+				if(moveX > 100 || moveX < -100){
 					lastSlide[slideNum].style.transform = "translateX(0px)";
-					if(moveX > 50){
+					if(moveX > 100){
 						if(slideNum === 0) return false;
 						removeActiveClassToElementFunc(lastBtn[slideNum], lastSlide[slideNum]);
 						slideNum --;
