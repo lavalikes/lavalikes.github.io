@@ -31,7 +31,7 @@
 	.img-slider{
 		position: relative;
 		width: 100vw;
-		height: 50vh;
+		height: 350px;
 	}
 		.img-slider .img-slider-picture{
 			position: absolute;

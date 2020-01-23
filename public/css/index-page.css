@@ -24,11 +24,11 @@
 			height: 100%;
 		}
 	.first-section .logo{
-		width: 21.80952380952381%;
+		width: 20vh;
 		height: 100%;
 	}
 		.logo-text{
-			font-size: 11vw;
+			font-size: 10vh;
 		}
 	.first-section .buy-btn{
 		position: absolute;
@@ -562,15 +562,22 @@
 		background-position: top, bottom;
 		height: 100vh;
 	}
-	.first-section .buy-btn{
-		bottom: 5.30760749724366vh;
-		right: 1.785714285714286vw;
-		padding: 10px 92px;
-	}
-		.first-section .buy-btn::after{;
-			padding: 10px 92px;
-			text-align: center;
+		.first-section .logo{
+			width: 21.80952380952381%;
+			height: 100%;
 		}
+			.logo-text{
+				font-size: 11vw;
+			}
+		.first-section .buy-btn{
+			bottom: 5.30760749724366vh;
+			right: 1.785714285714286vw;
+			padding: 10px 92px;
+		}
+			.first-section .buy-btn::after{;
+				padding: 10px 92px;
+				text-align: center;
+			}
 
 
 	.second-section .text-block{
