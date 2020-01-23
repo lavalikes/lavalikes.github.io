@@ -464,7 +464,7 @@
 	overflow: hidden
 }
 	.iframe-block-container .iframe-block{
-		height: 30vh;
+		height: 50vw;
 		width: 90vw;
 		background: black;
 		border: 2px solid #BC7D57FF;
@@ -488,8 +488,8 @@
 				cursor:pointer
 			}
 		.iframe-block-container .iframe-block iframe{
-			height: 30vh
-			width: 90vw
+			height: 50vw;
+			width: 90vw;
 		}
 
 
@@ -502,7 +502,7 @@
 	overflow: hidden
 }
 	.img-block-container .img-block{
-		height: 20vh;
+		height: 50vw;
 		width: 80vw;
 		border: 2px solid #8E906EFF;
 		box-shadow: 0 0 20px 5px #8E906EFF;
