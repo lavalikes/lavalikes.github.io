@@ -18,6 +18,7 @@ var sliderCharacters = {
 var lastBtn = document.getElementsByClassName("img-slider-num");
 	lastSlide = document.getElementsByClassName("img-slider-picture");
 var character =  document.getElementsByClassName("character-name")[0].id;
+	characterPcs = sliderCharacters[character].img;
 
 
 
@@ -46,7 +47,6 @@ function creatingImgSliderSectionFunc()
 	// эти переменные будут накапливать в себе html код в виде строки, после чего этот код будет использован для создания элементов
 	var creatingSlidesHTML = "";
 		creatingSlidesNumHTML = "";
-		characterPcs = sliderCharacters[character].img;
 
 	// получаем имя персонажа
 	// в цикле += означает добивать к текущему значению следующий код

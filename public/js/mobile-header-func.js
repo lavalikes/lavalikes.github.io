@@ -32,7 +32,7 @@ if(!document.getElementsByClassName("first-section-video")[0]){
 						slideNum --;
 					}
 					else{
-						if(slideNum === 5) return false;
+						if(slideNum === characterPcs.length) return false;
 						removeActiveClassToElementFunc(lastBtn[slideNum], lastSlide[slideNum]);
 						slideNum ++;
 					};

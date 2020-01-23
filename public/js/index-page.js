@@ -119,7 +119,7 @@ window.onload = function(){
 		{
 			var elem = document.getElementById("emailSubmitBtn");
 
-			console.log(elem);
+			addActiveClassToElementFunc(elem);
 			// включаем кнопку убирая аттрибут disabled
 			document.getElementById("emailSubmitBtn").removeAttribute("disabled");
 			emailButtonIsActive = true;
@@ -138,14 +138,12 @@ window.onload = function(){
 		if(this.value != "" && emailInputActive === false)
 		{
 			var elem = document.getElementById("emailForm");
-
-			console.log(elem);
+			addActiveClassToElementFunc(elem);
 			emailInputActive = true;
 		}
 		else if((this.value == "" || this.value == " ") && emailInputActive === true)
 		{
 			var elem = document.getElementById("emailForm");
-
 			removeActiveClassToElementFunc(elem);
 			emailInputActive = false;
 		}
