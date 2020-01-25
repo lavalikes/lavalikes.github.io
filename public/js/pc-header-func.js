@@ -1,5 +1,4 @@
 // изменение закрепления хедера
-console.log("yes");
 var	headerFixation = false;
 headerTop = document.getElementsByClassName("main-header")[0].offsetTop;
 

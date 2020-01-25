@@ -5,6 +5,13 @@ var slideNum = 0;
 
 
 // подключение мобильного или комп хедера
+// функция подключения css файлов
+function includeCss(href){
+	var link = document.createElement('link');
+    link.href = href;
+    link.rel = "stylesheet";
+    document.getElementsByTagName('head')[0].appendChild(link);
+};
 // функция подключения js файлов
 function includeJs(url){
 	var script = document.createElement('script');
@@ -50,9 +57,11 @@ var siteHeadersCreator = function(){
 
 			createElementAfterBeginFunc(HTML);
 			if(document.getElementsByClassName("first-section-video")[0]){
+				includeCss("public/css/index-page-mobile.css")
 				includeJs("public/js/mobile-header-func.js");
 			} else{
-				includeJs("../public/js/mobile-header-func.js");
+				includeCss("../public/css/character-page-mobile.css")
+				includeJs("../public/js/mobile-header-func.js"); // возврат назад потому что это страницы персонажей
 			}
 	}
 	else {
@@ -91,9 +100,11 @@ var siteHeadersCreator = function(){
 
 		createElementAfterBeginFunc(HTML);
 		if(document.getElementsByClassName("first-section-video")[0]){
+			includeCss("public/css/index-page-pc.css")
 			includeJs("public/js/pc-header-func.js");
 		} else{
-			includeJs("../public/js/pc-header-func.js");
+			includeCss("../public/css/index-page-pc.css")
+			includeJs("../public/js/pc-header-func.js"); // возврат назад потому что это страницы персонажей
 		}
 	}
 }();

@@ -23,10 +23,10 @@ if(!document.getElementsByClassName("first-section-video")[0]){
 				let x,moveX;
 				x = event.targetTouches[0].pageX;
 				moveX = x - startX;
-				lastSlide[slideNum].style.transform = "translateX(" + moveX + "px)";
-				if(moveX > 150 || moveX < -150){
+				lastSlide[slideNum].style.transform = "translateX(" + (moveX * 2) + "px)";
+				if(moveX > 75 || moveX < -75){
 					lastSlide[slideNum].style.transform = "translateX(0px)";
-					if(moveX > 150){
+					if(moveX > 75){
 						if(slideNum === 0) return false;
 						removeActiveClassToElementFunc(lastBtn[slideNum], lastSlide[slideNum]);
 						slideNum --;
