@@ -26,7 +26,7 @@ var siteHeadersCreator = function(){
 			+ '<line x1="0" y1="10%" x2="100%" y2="10%"/><line x1="0" y1="50%" x2="100%" y2="50%"/><line x1="0" y1="90%" x2="100%" y2="90%"/>'
 			+ '</svg></div>'
 			+ '<ul>'
-			if(document.getElementsByClassName("first-section-video")[0]){
+			if(document.getElementsByClassName("first-section")[0]){
 				HTML += '<li><a href="#" class="font-family-HeadlinerNo45">Главная</a></li>' 
 				+ '<li class="character-pages">' 
 				+ '<p class="font-family-HeadlinerNo45">Персонажи</p>' 
@@ -55,17 +55,17 @@ var siteHeadersCreator = function(){
 			+ '</header>';
 
 
-			createElementAfterBeginFunc(HTML);
-			if(document.getElementsByClassName("first-section-video")[0]){
+			createElementAfterBeginFunc("body", HTML);
+			if(document.getElementsByClassName("first-section")[0]){
 				includeCss("public/css/index-page-mobile.css")
-				includeJs("public/js/mobile-header-func.js");
+				includeJs("public/js/mobile-func.js");
 			} else{
 				includeCss("../public/css/character-page-mobile.css")
-				includeJs("../public/js/mobile-header-func.js"); // возврат назад потому что это страницы персонажей
+				includeJs("../public/js/mobile-func.js"); // возврат назад потому что это страницы персонажей
 			}
 	}
 	else {
-		if(document.getElementsByClassName("first-section-video")[0]){
+		if(document.getElementsByClassName("first-section")[0]){
 			HTML += '<header class="main-header static">' 
 				+ '<ul class="flex-start">' 
 				+ '<li><a href="#" class="font-family-HeadlinerNo45">Главная</a></li>' 
@@ -98,13 +98,13 @@ var siteHeadersCreator = function(){
 			+ '</header>';
 
 
-		createElementAfterBeginFunc(HTML);
-		if(document.getElementsByClassName("first-section-video")[0]){
+		createElementAfterBeginFunc("body", HTML);
+		if(document.getElementsByClassName("first-section")[0]){
 			includeCss("public/css/index-page-pc.css")
-			includeJs("public/js/pc-header-func.js");
+			includeJs("public/js/pc-func.js");
 		} else{
-			includeCss("../public/css/index-page-pc.css")
-			includeJs("../public/js/pc-header-func.js"); // возврат назад потому что это страницы персонажей
+			includeCss("../public/css/character-page-pc.css")
+			includeJs("../public/js/pc-func.js"); // возврат назад потому что это страницы персонажей
 		}
 	}
 }();
@@ -127,8 +127,8 @@ function addActiveClassToElementFunc(...args){
 function removeActiveClassToElementFunc(...args){
 	for (var i = 0; i < args.length; i++) args[i].classList.remove("active");
 }
-function createElementAfterBeginFunc(HTML){
-document.getElementsByTagName("body")[0].insertAdjacentHTML("afterbegin", HTML);
+function createElementAfterBeginFunc(elem, HTML){
+document.querySelector(elem).insertAdjacentHTML("afterbegin", HTML);
 };
 
 

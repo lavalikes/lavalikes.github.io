@@ -22,6 +22,15 @@ function indexPageScrollingFunc(){
 	window.scrollTo(0, direction);
 }
 
+function buySectionHeight(){
+	let elem = document.getElementsByClassName("slider-buy-section-container");
+	let elemHeight = 0;
+
+	for(var i=0; i<elem.length; i++) if(elemHeight < elem[i].offsetHeight) elemHeight = elem[i].offsetHeight; // супер сокращенная форма цикла с if
+	
+	document.querySelector(".slider-buy-list-container").style.height = elemHeight + "px";
+};
+
 
 
 // откроывающиеся окна(видео и изображения)
@@ -93,16 +102,7 @@ function redirectionIndexPageContenWindowFunc(){
 
 window.onload = function(){
 
-	let buySectionHeight = function(){
-		let elem = document.getElementsByClassName("slider-buy-section-container");
-		let elemHeight = 0;
-
-		for(var i=0; i<elem.length; i++) if(elemHeight < elem[i].offsetHeight) elemHeight = elem[i].offsetHeight; // супер сокращенная форма цикла с if
-		
-		document.querySelector(".slider-buy-list-container").style.height = elemHeight + "px";
-	}(); // самозапускающаяся функция
-
-	
+	buySectionHeight();
 
 	// события на прокрутку страницы, по нажатию на кнопки хедера
 	for(var i=0; i<document.getElementsByClassName("scrolling-page").length; i++){
@@ -197,3 +197,8 @@ window.onload = function(){
 	};
 
 };
+
+
+window.onresize = function(){
+	buySectionHeight();
+}

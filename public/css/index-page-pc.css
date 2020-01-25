@@ -226,12 +226,12 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		display: none;
+		opacity: 0;
 		transition: all ease .5s;
 		width: 100%;
 	}
 		.slider-buy-section-container.active{
-			display: block;
+			opacity: 1;
 		}
 	.slider-buy-section{
 		display: flex;

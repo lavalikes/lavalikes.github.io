@@ -4,6 +4,8 @@
 	padding: 20px 10px;
 }
 .first-section{
+	background: url("../img/index-page/first-section-bg.jpg") center no-repeat;
+	background-size: cover;
 	overflow: hidden;
 	position: relative;
 	height: calc(100vh - 55px);
@@ -223,12 +225,12 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		display: none;
+		opacity: 0;
 		transition: all ease .5s;
 		width: 100%;
 	}
 		.slider-buy-section-container.active{
-			display: block;
+			opacity: 1;
 		}
 	.slider-buy-section{
 		display: flex;
@@ -534,8 +536,16 @@
 
 
 
-@media screen and (min-width: 900px){
+@media screen and (min-width: 700px){
 	.slider-buy-header-btns-list{
 		flex-flow: wrap row;
+	}
+	.slider-buy-header-btns{
+		width: 180px;
+		font-size: 17px;
+		padding-bottom: 12px;
+		border-bottom: 3px solid transparent;
+		cursor: pointer;
+		transition: all ease .5s;
 	}
 }
