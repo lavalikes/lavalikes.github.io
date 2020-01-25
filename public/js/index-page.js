@@ -61,7 +61,7 @@ function indexPageActiveteContentWindowFunc(elem){
 		};
 		HTML+= "</div></div>";
 
-	createElementAfterBeginFunc(HTML);
+	createElementAfterBeginFunc("body", HTML);
 	document.body.style.overflow = 'hidden';
 	document.getElementById(switcher+"CloseBlock").addEventListener("click", function(){
 	document.getElementById(switcher+"BlockContainer").remove();
